@@ -1,9 +1,7 @@
 library angular_fire.auth;
 
 import 'dart:async' show StreamController, Future;
-import '../app/app.dart' show FirebaseApp;
-
-import 'package:angular/angular.dart' show Injectable, NgZone;
+import 'package:angular/angular.dart' show Injectable, NgZone, Provider;
 import 'package:firebase/firebase.dart' show Auth, User, App;
 
 @Injectable()
@@ -28,3 +26,6 @@ class AngularFireAuth {
 
   Future<Null> signOut() async => await _auth.signOut(); 
 }
+
+Provider angularFireAuthProvider =
+  const Provider(AngularFireAuth, deps: const [App]);

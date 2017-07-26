@@ -27,12 +27,10 @@ class AppComponent implements OnActivate{
 
   AppComponent(this._auth) {
     final user = googleSignIn();
-    print(user);
-    print(_auth.auth.currentUser);
   }
 
   Future<UserCredential> googleSignIn() async {
-    final user = await _auth.auth.signInWithPopup(new GoogleAuthProvider());
+    final user = await _auth.auth.signInWithPopup(new PhoneAuthProvider());
     return user;
   }
 

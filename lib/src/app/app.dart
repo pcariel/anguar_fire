@@ -1,7 +1,7 @@
 library angular_fire.app;
 
 import 'package:angular/angular.dart'
-    show OpaqueToken, Inject, Provider, Injectable, Optional;
+    show OpaqueToken, Inject, Provider, Optional;
 import 'package:firebase/firebase.dart'
     show initializeApp, FirebaseJsNotLoadedException, app, FirebaseOptions, App;
 
@@ -10,7 +10,8 @@ https://github.com/oauth-io/oauth-js/blob/master/coffee/lib/oauth.coffee */
 
 const OpaqueToken firebaseAppConfigToken =
     const OpaqueToken("firebaseAppConfigToken");
-const OpaqueToken firebaseAppName = const OpaqueToken("FirebaseAppName");
+const OpaqueToken firebaseAppName = 
+    const OpaqueToken("FirebaseAppName");
 
 App firebaseAppFactory(@Inject(firebaseAppConfigToken) FirebaseOptions config,
     @Inject(firebaseAppName) @Optional() String appName) {
